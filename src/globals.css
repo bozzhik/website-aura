@@ -1,8 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  min-width: 20rem;
-  margin: 0;
+  @apply min-w-[25rem] m-0 font-sans;
 }

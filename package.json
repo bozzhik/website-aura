@@ -3,7 +3,7 @@
   "displayName": "website-aura",
   "version": "0.0.0",
   "author": "bozzhik",
-  "description": "",
+  "description": "chrome extension for analyzing website's mood through color schemes and typography",
   "type": "module",
   "license": "MIT",
   "keywords": [
@@ -23,8 +23,11 @@
     "zip": "npm run build && node src/zip.js"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.19",

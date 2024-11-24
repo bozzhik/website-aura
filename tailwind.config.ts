@@ -7,7 +7,17 @@ const config: Config = {
     fontFamily: {
       sans: ['Inter', ...fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      colors: {
+        background: '#0A0A0A',
+        foreground: '#e6e6e6',
+        primary: {
+          DEFAULT: '#93ACC5',
+          light: '#CED9E3',
+          dark: '#3E5366',
+        },
+      },
+    },
   },
   plugins: [],
 }

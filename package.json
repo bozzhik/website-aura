@@ -1,7 +1,7 @@
 {
   "name": "website-aura",
   "displayName": "website-aura",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "bozzhik",
   "description": "chrome extension for analyzing website's mood through color schemes and typography",
   "type": "module",

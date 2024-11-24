@@ -1,4 +1,4 @@
-console.info('contentScript is running')
+// console.info('contentScript is running')
 
 import {getCurrentTab} from './currentTab'
 import {analyzeSite} from './siteAnalysis'

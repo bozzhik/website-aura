@@ -1,9 +1,9 @@
 {
   "name": "website-aura",
   "displayName": "website-aura",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "bozzhik",
-  "description": "chrome extension for analyzing website's mood through color schemes and typography",
+  "description": "Unlock the mood of any website with a detailed color scheme analysis and mood-based design insights.",
   "type": "module",
   "license": "MIT",
   "keywords": [

@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import type {TabInfo} from '../contentScript/currentTab'
 import type {MoodAnalysis} from '../contentScript/siteAnalysis'
 import Ripple from '../components/Ripple'
+import {cn} from '../utils'
 
 type SiteInfo = TabInfo & MoodAnalysis
 
@@ -41,28 +42,34 @@ export function Popup() {
   }
 
   return (
-    <main className="relative p-4 pt-3 space-y-3.5">
+    <main className="relative p-4 pt-3 space-y-3.5 min-h-32">
+      <h3 className={cn('text-lg font-medium', siteInfo ? 'text-neutral-400' : 'text-neutral-400')}>
+        {siteInfo ? (
+          siteInfo.url
+        ) : (
+          <>
+            <span className="text-red-400">Data missing! </span> Please reload the page.
+          </>
+        )}
+      </h3>
+
       {siteInfo && (
-        <>
-          <h3 className="text-lg font-medium text-neutral-400">{siteInfo.url}</h3>
+        <div className="space-y-5">
+          <div className="flex items-center gap-3.5">
+            <span className="text-4xl">{getMoodEmoji(siteInfo.mood)}</span>
 
-          <div className="space-y-5">
-            <div className="flex items-center gap-3.5">
-              <span className="text-4xl">{getMoodEmoji(siteInfo.mood)}</span>
-
-              <div className="flex flex-col">
-                <span className="text-lg font-medium capitalize">{siteInfo.mood}</span>
-                <span className="text-sm leading-[1.2] font-light text-neutral-400">{getMoodDescription(siteInfo.mood, siteInfo.colorScheme)}</span>
-              </div>
-            </div>
-
-            <div className="flex gap-2 p-2 rounded-md bg-neutral-700/50">
-              {siteInfo.mainColors.map((color, i) => (
-                <div key={i} className="w-full h-12 rounded ring-1 ring-neutral-600" style={{backgroundColor: color}} title={color} />
-              ))}
+            <div className="flex flex-col">
+              <span className="text-lg font-medium capitalize">{siteInfo.mood}</span>
+              <span className="text-sm leading-[1.2] font-light text-neutral-400">{getMoodDescription(siteInfo.mood, siteInfo.colorScheme)}</span>
             </div>
           </div>
-        </>
+
+          <div className="flex gap-2 p-2 rounded-md bg-neutral-700/50">
+            {siteInfo.mainColors.map((color, i) => (
+              <div key={i} className="w-full h-12 rounded ring-1 ring-neutral-600" style={{backgroundColor: color}} title={color} />
+            ))}
+          </div>
+        </div>
       )}
 
       <Ripple className="absolute -top-14 left-[50%] -translate-x-1/2 -z-50" />

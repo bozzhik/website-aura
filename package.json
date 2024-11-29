@@ -1,7 +1,7 @@
 {
   "name": "website-aura",
   "displayName": "Website Aura: Color Analyzer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "bozzhik",
   "description": "Unlock the mood of any website with a detailed color scheme analysis and mood-based design insights.",
   "type": "module",

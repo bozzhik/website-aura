@@ -38,11 +38,11 @@ pnpm dev
 
 ```typescript
 {
-  "framework": "React",
-  "build": "Vite",
   "manifest": "v3",
-  "styling": "Tailwind CSS",
+  "framework": "React",
   "language": "TypeScript"
+  "styling": "Tailwind CSS",
+  "build": "Vite",
 }
 ```
 

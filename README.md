@@ -73,7 +73,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Author: [bozzhik](https://bozzhik.ru)
 - Email: bozzhik@gmail.com
-- Telegram: [@bozzzzhik](https://t.me/bozzhik)
+- Telegram: [@bozzhik](https://t.me/bozzhik)
 
 ---
 

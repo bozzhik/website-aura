@@ -42,7 +42,7 @@ We may update this privacy policy as we improve the extension. Any changes will 
 If you have questions about our privacy practices, please contact:
 
 - Email: bozzhik@gmail.com
-- Telegram: [@bozzhik](https://t.me/bozzzzhik)
+- Telegram: [@bozzhik](https://t.me/bozzhik)
 - Website: [bozzhik.ru](https://bozzhik.ru)
 
 Last updated: November 24, 2024

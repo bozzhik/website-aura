@@ -1,10 +1,10 @@
 # ⚡️ Website Aura
 
-> Chrome extension that analyzes website color schemes in real-time, leveraging color theory algorithms to detect design patterns, emotional impact, and color relationships. Built with React, TypeScript, and advanced color processing logic.
+<p align="center">
+  <img src="https://github.com/bozzhik/website-aura/blob/main/src/assets/readme.png?raw=true" alt="Website Aura Preview" width="2000"/>
+</p>
 
-<!-- <p align="center">
-  <img src="./assets/preview.png" alt="Website Aura Preview" width="800"/>
-</p> -->
+> Chrome extension that analyzes website color schemes in real-time, leveraging color theory algorithms to detect design patterns, emotional impact, and color relationships. Built with React, TypeScript, and advanced color processing logic.
 
 ## ✨ Features
 

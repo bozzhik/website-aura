@@ -4,10 +4,12 @@ import type {MoodAnalysis} from '../contentScript/siteAnalysis'
 import Ripple from '../components/Ripple'
 import {cn} from '../utils'
 
+const IS_PROD = process.env.NODE_ENV === 'production'
 type SiteInfo = TabInfo & MoodAnalysis
 
 export function Popup() {
   const [siteInfo, setSiteInfo] = useState<SiteInfo | null>(null)
+  const [tooltip, setTooltip] = useState('')
 
   useEffect(() => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -16,6 +18,16 @@ export function Popup() {
       })
     })
   }, [])
+
+  const handleCopy = async (color: string) => {
+    try {
+      await navigator.clipboard.writeText(color)
+      setTooltip('Copied!')
+      setTimeout(() => setTooltip(''), 1500)
+    } catch (err) {
+      setTooltip('Failed to copy!')
+    }
+  }
 
   const getMoodEmoji = (mood: MoodAnalysis['mood']) => {
     const emojis = {
@@ -51,6 +63,8 @@ export function Popup() {
             <span className="text-red-400">Data missing! </span> Please reload the page.
           </>
         )}
+
+        <span className="text-cyan-300">{!IS_PROD && ' DEV'}</span>
       </h3>
 
       {siteInfo && (
@@ -66,7 +80,9 @@ export function Popup() {
 
           <div className="flex gap-2 p-2 rounded-md bg-neutral-700/50">
             {siteInfo.mainColors.map((color, i) => (
-              <div key={i} className="w-full h-12 rounded ring-1 ring-neutral-600" style={{backgroundColor: color}} title={color} />
+              <div key={i} className="w-full h-12 rounded ring-1 ring-neutral-600 relative group" style={{backgroundColor: color}} onClick={() => handleCopy(color)} onMouseEnter={() => setTooltip(color)} onMouseLeave={() => setTooltip('')}>
+                <span className="absolute -top-[30px] left-1/2 transform -translate-x-1/2 px-1.5 py-1 text-xs text-neutral-800 bg-neutral-200 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">{tooltip || color}</span>
+              </div>
             ))}
           </div>
         </div>

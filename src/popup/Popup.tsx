@@ -1,8 +1,11 @@
-import {useState, useEffect} from 'react'
 import type {TabInfo} from '../contentScript/currentTab'
 import type {MoodAnalysis} from '../contentScript/siteAnalysis'
-import Ripple from '../components/Ripple'
+
+import {useState, useEffect} from 'react'
 import {cn} from '../utils'
+
+import Snable from '../components/Snable'
+import Ripple from '../components/Ripple'
 
 const IS_PROD = process.env.NODE_ENV === 'production'
 type SiteInfo = TabInfo & MoodAnalysis
@@ -87,6 +90,8 @@ export function Popup() {
           </div>
         </div>
       )}
+
+      <Snable />
 
       <Ripple className="absolute -top-14 left-[50%] -translate-x-1/2 -z-50" />
     </main>
